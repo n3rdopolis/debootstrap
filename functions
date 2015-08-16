@@ -1027,7 +1027,7 @@ setup_proc () {
 		umount_on_exit /proc/bus/usb
 		umount_on_exit /proc
 		umount "$TARGET/proc" 2>/dev/null || true
-		in_target mount -t proc proc /proc
+		mount -t proc proc $TARGET/proc
 		if [ -d "$TARGET/sys" ] && \
 		   grep -q '[[:space:]]sysfs' /proc/filesystems 2>/dev/null; then
 			umount_on_exit /sys
